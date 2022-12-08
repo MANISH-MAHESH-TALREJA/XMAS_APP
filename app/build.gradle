@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.application'
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'net.manish.christmas'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "net.manish.christmas"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildTypes.each{
+        it.buildConfigField 'String', 'SERVER_URL', SERVER_URL
+        it.buildConfigField 'String', 'API_KEY', API_KEY
+        it.buildConfigField 'String', 'ENC_KEY', ENC_KEY
+        it.buildConfigField 'String', 'IV', IV
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13.2'
+    implementation project(path: ':slider')
+    implementation project(path: ':fab')
+    implementation 'androidx.appcompat:appcompat:1.7.0-alpha01'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.onesignal:OneSignal:4.8.3'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.android.gms:play-services-ads:21.3.0'
+    implementation 'com.google.ads.mediation:facebook:6.12.0.0'
+    implementation 'com.startapp:inapp-sdk:4.10.2'
+    implementation 'com.applovin:applovin-sdk:11.5.5'
+    implementation 'com.google.android.ads.consent:consent-library:1.0.8'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    implementation 'com.github.castorflex.smoothprogressbar:library-circular:1.3.0'
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+    implementation 'com.github.iwgang:countdownview:2.1.6'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.tiagosantos:enchantedviewpager:1.1.0'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.1@aar'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'commons-io:commons-io:2.6'
+    implementation 'com.wortise:android-sdk:1.4.1'
+}

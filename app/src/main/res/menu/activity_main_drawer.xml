@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_wallpapers"
+            android:icon="@mipmap/wallpaper"
+            android:title="@string/wallpaper" />
+        <item
+            android:id="@+id/nav_ringtones"
+            android:icon="@mipmap/ringtone"
+            android:title="@string/ringtone" />
+        <item
+            android:id="@+id/nav_messages"
+            android:icon="@mipmap/message"
+            android:title="@string/message" />
+
+    </group>
+
+    <item
+        android:id="@+id/nav_quiz"
+        android:icon="@mipmap/quiz"
+        android:title="@string/quiz" />
+
+    <item
+        android:id="@+id/nav_rate"
+        android:icon="@mipmap/rate"
+        android:title="@string/rate_app" />
+
+    <item
+        android:id="@+id/nav_shareapp"
+        android:icon="@drawable/share"
+        android:title="@string/shareapp" />
+
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@mipmap/settings"
+        android:title="@string/settings" />
+
+</menu>
